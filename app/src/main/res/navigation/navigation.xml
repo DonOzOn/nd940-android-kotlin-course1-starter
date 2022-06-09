@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/login_destination">
+    <fragment
+        android:id="@+id/login_destination"
+        android:name="com.udacity.shoestore.screen.login.LoginFragment"
+        android:label="@string/login_fragment">
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcome_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_destination"
+        android:name="com.udacity.shoestore.screen.welcome.WelcomeFragment"
+        android:label="@string/welcome_fragment" >
+        <action
+            android:id="@+id/action_welcome_to_instruction"
+            app:destination="@id/instruction_destination" />
+        <action
+            android:id="@+id/action_welcome_destination_to_login_destination"
+            app:destination="@id/login_destination"
+            app:popUpTo="@id/welcome_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/instruction_destination"
+        android:name="com.udacity.shoestore.screen.instruction.InstructionFragment"
+        android:label="@string/instruction_fragment" >
+        <action
+            android:id="@+id/action_instruction_to_shoeList"
+            app:destination="@id/shoeList_destination" />
+        <action
+            android:id="@+id/action_instruction_destination_to_welcome_destination2"
+            app:destination="@id/welcome_destination"
+            app:popUpTo="@id/welcome_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeList_destination"
+        android:name="com.udacity.shoestore.screen.shoelist.ShoeListFragment"
+        android:label="@string/shoelist_fragment" >
+        <action
+            android:id="@+id/action_shoeList_destination_to_instruction_destination"
+            app:destination="@id/instruction_destination"
+            app:popUpTo="@id/instruction_destination" />
+        <action
+            android:id="@+id/action_shoeList_destination_to_login_destination"
+            app:destination="@id/login_destination"
+            app:popUpTo="@id/login_destination" />
+        <action
+            android:id="@+id/action_shoeList_destination_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+        <argument
+            android:name="newShoe"
+            app:argType="com.udacity.shoestore.models.Shoe"/>
+        <argument
+            android:name="fromDetail"
+            app:argType="boolean"
+            android:defaultValue="false" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.screen.shoedetail.ShoeDetailFragment"
+        android:label="Shoe Detail">
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoeList_destination"
+            app:destination="@id/shoeList_destination"
+            app:popUpTo="@id/shoeList_destination" />
+    </fragment>
+</navigation>

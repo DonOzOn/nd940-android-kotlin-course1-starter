@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="lblEmail">Email</string>
+    <string name="lblPassword">Password</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtExistLogin">Login With Exist Account</string>
+    <string name="txtWelcomeTitle">Welcome to ShoeStore</string>
+    <string name="txtWelcomeDesc">Any Place. Any Time. Any Condition. \n
+        Be Your Best Every Time With Nike Shoes And Clothing. \n
+        The Official Website. Home Of Everything Nike. \n
+        Shop The Latest Releases Today.</string>
+    <string name="txtButtonGo">Go</string>
+    <string name="first_string">An introduction text is simply a text you send to start off a text conversation.
+        \n Whether you’re texting a customer, colleague, or coworker,
+        \n setting the proper tone for your interactions right away is important.</string>
+    <string name="second_string">The only really important rule to follow when writing a text message introduction is to keep it focused.
+        \n This isn’t the time to chat about the weatherーget the point across in as few words as possible</string>
+    <string name="third_string">Keep your tone friendly and conversational.
+        \n One of the biggest reasons texting is currently so popular is that it’s an intimate way to communicate.
+        \n So, you’ll want to sound like a normal person in your messages.</string>
+    <string name="four_string">When you’re introducing yourself to a new client, give them a friendly hello and an option to set up your next meeting.
+        \n Use these sample introduction text messages to start productive, successful conversations with your business contacts.</string>
+    <string name="go_to_shop">Go to shop</string>
+    <string name="login_fragment">Login</string>
+    <string name="welcome_fragment">Welcome</string>
+    <string name="instruction_fragment">Instruction</string>
+    <string name="shoelist_fragment">Shoe List</string>
+    <string name="about">about</string>
+    <string name="share">share</string>
+    <string name="log_out">Log out</string>
+    <string name="lblShoeName">Shoe Name</string>
+    <string name="lblCompany">Company</string>
+    <string name="lblShoeSize">Shoe Size</string>
+    <string name="lblDescription">Description</string>
+</resources>
