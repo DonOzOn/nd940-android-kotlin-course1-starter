@@ -2,12 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!--    <data>-->
-    <!--        <variable-->
-    <!--            name="mainViewModal"-->
-    <!--            type="com.udacity.shoestore.models.Shoe" />-->
-    <!--    </data>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/instruction_layout"
         android:layout_width="match_parent"
@@ -79,7 +73,5 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,7 +7,6 @@
                 name="shoeListViewModel"
                 type="com.udacity.shoestore.screen.shoelist.ShoeListViewModel" />
         </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoelist_layout"
         android:layout_width="match_parent"
@@ -28,14 +27,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <ListView
                     android:id="@+id/listShoe"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
-                <!--                android:entries="@{shoeListViewModel}"-->
-
             </LinearLayout>
 
         </ScrollView>
