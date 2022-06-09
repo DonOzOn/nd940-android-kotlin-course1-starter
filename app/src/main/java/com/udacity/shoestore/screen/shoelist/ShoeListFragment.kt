@@ -8,8 +8,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+//import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
@@ -17,22 +18,31 @@ import com.udacity.shoestore.models.Shoe
 
 
 class ShoeListFragment : Fragment() {
-    private lateinit var viewModel: ShoeListViewModel
     private lateinit var  binding: ShoeListFragmentBinding
+    private val viewModel: ShoeListViewModel by activityViewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
          binding = DataBindingUtil.inflate(
             inflater, R.layout.shoe_list_fragment, container, false)
         Log.i("ShoeListFragment111111","ShoeListFragment created")
-        viewModel = ViewModelProviders.of(this).get(ShoeListViewModel::class.java);
         binding.lifecycleOwner = this
         binding.shoeListViewModel = viewModel
-        val args = ShoeListFragmentArgs.fromBundle(requireArguments())
-        if(args.fromDetail === true){
-            var  viewNew: View = addShoeToView(args.newShoe,inflater,container)
-            binding.viewListShoe.addView(viewNew)
-        }
+        viewModel.submit.observe(viewLifecycleOwner, Observer { isSubmit ->
+            if (isSubmit === true) {
+                viewModel.addShoe(
+                    Shoe(
+                        viewModel.nameShoe.value.toString(),
+                        viewModel.sizeShoe.value.toString().toDouble(),
+                        viewModel.companyShoe.value.toString(),
+                        viewModel.descShoe.value.toString()
+                    )
+                )
+            }
+        })
+
+
         viewModel.listShoe.observe(viewLifecycleOwner, Observer { shoe ->
             for (element in shoe){
                 Log.i("ShoeListFragment","ShoeListFragment created")

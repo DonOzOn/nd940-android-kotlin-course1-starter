@@ -2,7 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <data>
+        <variable
+            name="shoeViewModal"
+            type="com.udacity.shoestore.screen.shoelist.ShoeListViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoedetail_layout"
         android:layout_width="match_parent"
@@ -20,7 +24,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/txtShoeName2"
+            android:id="@+id/txtShoeName"
             android:layout_width="262dp"
             android:layout_height="48dp"
             android:background="@drawable/txtround_style"
@@ -28,6 +32,8 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingLeft="10dp"
+            android:text="@{shoeViewModal.nameShoe}"
+
             app:layout_constraintBottom_toBottomOf="@+id/textView8"
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintStart_toStartOf="@+id/txtCompany"
@@ -53,6 +59,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingLeft="10dp"
+            android:text="@{shoeViewModal.companyShoe}"
             app:layout_constraintBottom_toBottomOf="@+id/textView9"
             app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="@+id/txtShoeSize"
@@ -77,6 +84,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingLeft="10dp"
+            android:text="@{shoeViewModal.sizeShoe}"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintStart_toStartOf="@+id/txtDescription"
@@ -103,6 +111,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
+            android:text="@{shoeViewModal.descShoe}"
             app:layout_constraintBottom_toBottomOf="@+id/lblDescriptrio"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
